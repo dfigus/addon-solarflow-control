@@ -1,0 +1,77 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "rebaseWhen": "behind-base-branch",
+  "reviewers": ["dfigus"],
+  "assignees": ["dfigus"],
+  "dependencyDashboard": true,
+  "labels": ["dependencies", "no-stale"],
+  "configMigration": true,
+  "commitMessagePrefix": "⬆️",
+  "commitMessageTopic": "{{depName}}",
+  "extends": ["workarounds:reduceRepologyServerLoad"],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "fileMatch": ["/Dockerfile$", "/build.yaml$"],
+      "matchStringsStrategy": "any",
+      "matchStrings": [
+        "ARG BUILD_FROM=(?<depName>.*?):(?<currentValue>.*?)\\s+",
+        "(aarch64|amd64|armhf|armv7|i386):\\s[\"']?(?<depName>.*?):(?<currentValue>.*?)[\"']?\\s"
+      ],
+      "datasourceTemplate": "docker"
+    },
+    {
+      "customType": "regex",
+      "fileMatch": ["/Dockerfile$"],
+      "matchStringsStrategy": "any",
+      "matchStrings": [
+        "\\s\\s(?<package>[a-z0-9][a-z0-9-_]+)=(?<currentValue>[a-z0-9-_.]+)\\s+"
+      ],
+      "versioningTemplate": "loose",
+      "datasourceTemplate": "repology",
+      "depNameTemplate": "alpine_3_20/{{package}}"
+    },
+    {
+      "customType": "regex",
+      "fileMatch": ["/Dockerfile$"],
+      "matchStringsStrategy": "any",
+      "matchStrings": ["ARG SOLARFLOW_RELEASE=\"(?<currentValue>.*?)\"\\n"],
+      "depNameTemplate": "reinhard-brandstaedter/solarflow-control",
+      "datasourceTemplate": "github-releases"
+    }
+  ],
+  "packageRules": [
+    {
+      "matchDatasources": ["github-releases"],
+      "automerge": true,
+      "minimumReleaseAge": "1 day",
+      "versioning": "regex:^(?<major>\\d+)\\-(?<minor>\\d+)\\-(?<patch>\\d+)(\\-\\-(?<build>\\d+\\-\\d+\\-\\d+))$",
+      "automergeSchedule": ["on saturday"]
+    },
+    {
+      "matchDatasources": ["repology"],
+      "groupName": "Alpine packages",
+      "automerge": true
+    },
+    {
+      "groupName": "Add-on base image",
+      "matchDatasources": ["docker"]
+    },
+    {
+      "groupName": "Add-on base image",
+      "matchDatasources": ["docker"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true
+    },
+    {
+      "matchManagers": ["pip_requirements"],
+      "addLabels": ["python"],
+      "rangeStrategy": "pin"
+    },
+    {
+      "matchManagers": ["pip_requirements"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true
+    }
+  ]
+}
