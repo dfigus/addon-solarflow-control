@@ -1,0 +1,17 @@
+---
+name: Solarflow Control
+version: dev
+slug: solarflow-control
+description: Solarflow Control
+url: "https://github.com/dfigus/addon-solarflow-control"
+init: false
+panel_icon: mdi:solar-power-variant
+arch:
+  - aarch64
+  - amd64
+  - armhf
+  - armv7
+  - i386
+map:
+  - addon_config:rw
+  - share:rw

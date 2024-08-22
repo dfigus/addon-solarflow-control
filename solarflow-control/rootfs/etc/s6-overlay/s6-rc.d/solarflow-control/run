@@ -1,0 +1,9 @@
+#!/usr/bin/with-contenv bashio
+# shellcheck shell=bash
+# ==============================================================================
+# Start Solarflow Control
+# ==============================================================================
+
+bashio::log.info "Running Solarflow Control"
+cd /solarflow
+exec python3 /solarflow/solarflow-control.py
