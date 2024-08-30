@@ -17,7 +17,7 @@ RUN \
     cd /tmp/solarflow && \
     git checkout "${SOLARFLOW_RELEASE}"
 
-    RUN \
+RUN \
     git clone https://github.com/reinhard-brandstaedter/solarflow-bt-manager /tmp/solarflow-bt && \
     cd /tmp/solarflow-bt && \
     git checkout "${SOLARFLOW_BT_DIGEST}"
@@ -32,7 +32,7 @@ COPY --from=builder /tmp/solarflow/src/requirements.txt /tmp/requirements.txt
 COPY --from=builder /tmp/solarflow-bt/src/ /solarflow-bt
 
 RUN pip3 install --no-cache-dir -Ur /tmp/requirements.txt
-RUN pip3 install --no-cache-dir -Ur /solarflow-bt/requirements.txt
+#RUN pip3 install --no-cache-dir -Ur /solarflow-bt/requirements.txt
 
 # Copy root filesystem
 COPY rootfs /
