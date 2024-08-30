@@ -8,7 +8,7 @@
   "configMigration": true,
   "commitMessagePrefix": "⬆️",
   "commitMessageTopic": "{{depName}}",
-  "extends": ["workarounds:reduceRepologyServerLoad"],
+  "extends": [],
   "customManagers": [
     {
       "customType": "regex",
