@@ -25,7 +25,11 @@ options:
   mqtt_password: ""
   dtu_base_topic: "solar"
   inverter_max_power: 2000
+  opendtu_inverter_serial: ""
   ahoydtu_inverter_id: "0"
+  sm_generic_base_topic: ""
+  sm_generic_cur_accessor: ""
+  sm_generic_total_accessor: ""
   sm_rapid_change_diff: 500
   sm_zero_offset: 20
   sm_shelly3em_base_topic: "shellies/shellyem3/"
