@@ -1,0 +1,147 @@
+#!/command/with-contenv bashio
+# ==============================================================================
+# Home Assistant Community Add-on: Solarflow Control
+# Configures the config.ini for Solarflow Control
+# ==============================================================================
+
+declare dtu_type
+declare smartmeter_type
+
+declare product_id
+declare device_id
+declare full_charge_interval
+declare control_bypass
+
+declare mqtt_host
+declare mqtt_port
+declare mqtt_user
+declare mqtt_password
+
+declare dtu_base_topic
+declare sf_inverter_channels
+declare inverter_max_power
+
+declare opendtu_inverter_serial
+declare ahoydtu_inverter_id
+
+declare sm_rapid_change_diff
+declare sm_zero_offset
+declare sm_generic_base_topic
+declare sm_generic_cur_accessor
+declare sm_generic_total_accessor
+
+declare sm_poweropti_user
+declare sm_poweropti_password
+
+declare sm_shelly3em_base_topic
+
+declare min_charge_power
+declare max_discharge_power
+declare limit_inverter
+declare max_inverter_limit
+declare min_inverter_limit
+declare discharge_during_daytime
+declare latitude
+declare longitude
+declare sunrise_offset
+declare sunset_offset
+
+bashio::log.info 'Updating Solarflow Control configuration...'
+
+dtu_type=$(bashio::config 'dtu_type')
+sed -i "s|<dtu_type>|$dtu_type|g" /solarflow/config.ini
+
+smartmeter_type=$(bashio::config 'smartmeter_type')
+sed -i "s|<smartmeter_type>|$smartmeter_type|g" /solarflow/config.ini
+
+device_id=$(bashio::config 'product_id')
+sed -i "s|<product_id>|$device_id|g" /solarflow/config.ini
+
+device_id=$(bashio::config 'device_id')
+sed -i "s|<device_id>|$device_id|g" /solarflow/config.ini
+
+full_charge_interval=$(bashio::config 'full_charge_interval')
+sed -i "s|<full_charge_interval>|$full_charge_interval|g" /solarflow/config.ini
+
+control_bypass=$(bashio::config 'control_bypass')
+sed -i "s|<control_bypass>|$control_bypass|g" /solarflow/config.ini
+
+mqtt_host=$(bashio::config 'mqtt_host')
+sed -i "s|<mqtt_host>|$mqtt_host|g" /solarflow/config.ini
+
+mqtt_port=$(bashio::config 'mqtt_port' '1883')
+sed -i "s|<mqtt_port>|$mqtt_port|g" /solarflow/config.ini
+
+mqtt_user=$(bashio::config 'mqtt_user')
+sed -i "s|<mqtt_user>|$mqtt_user|g" /solarflow/config.ini
+mqtt_password=$(bashio::config 'mqtt_password')
+sed -i "s|<mqtt_password>|$mqtt_password|g" /solarflow/config.ini
+
+dtu_base_topic=$(bashio::config 'dtu_base_topic')
+sed -i "s|<dtu_base_topic>|$dtu_base_topic|g" /solarflow/config.ini
+
+sf_inverter_channels=$(bashio::config 'sf_inverter_channels')
+sed -i "s|<sf_inverter_channels>|$sf_inverter_channels|g" /solarflow/config.ini
+
+inverter_max_power=$(bashio::config 'inverter_max_power')
+sed -i "s|<inverter_max_power>|$inverter_max_power|g" /solarflow/config.ini
+
+opendtu_inverter_serial=$(bashio::config 'opendtu_inverter_serial')
+sed -i "s|<opendtu_inverter_serial>|$opendtu_inverter_serial|g" /solarflow/config.ini
+
+ahoydtu_inverter_id=$(bashio::config 'ahoydtu_inverter_id')
+sed -i "s|<ahoydtu_inverter_id>|$ahoydtu_inverter_id|g" /solarflow/config.ini
+
+sm_rapid_change_diff=$(bashio::config 'sm_rapid_change_diff')
+sed -i "s|<sm_rapid_change_diff>|$sm_rapid_change_diff|g" /solarflow/config.ini
+
+sm_zero_offset=$(bashio::config 'sm_zero_offset')
+sed -i "s|<sm_zero_offset>|$sm_zero_offset|g" /solarflow/config.ini
+
+sm_generic_base_topic=$(bashio::config 'sm_generic_base_topic')
+sed -i "s|<sm_generic_base_topic>|$sm_generic_base_topic|g" /solarflow/config.ini
+
+sm_generic_cur_accessor=$(bashio::config 'sm_generic_cur_accessor' ' ')
+sed -i "s|<sm_generic_cur_accessor>|$sm_generic_cur_accessor|g" /solarflow/config.ini
+
+sm_generic_total_accessor=$(bashio::config 'sm_generic_total_accessor' ' ')
+sed -i "s|<sm_generic_total_accessor>|$sm_generic_total_accessor|g" /solarflow/config.ini
+
+sm_poweropti_user=$(bashio::config 'sm_poweropti_user' ' ')
+sed -i "s|<sm_poweropti_user>|$sm_poweropti_user|g" /solarflow/config.ini
+
+sm_poweropti_password=$(bashio::config 'sm_poweropti_password' ' ')
+sed -i "s|<sm_poweropti_password>|$sm_poweropti_password|g" /solarflow/config.ini
+
+sm_shelly3em_base_topic=$(bashio::config 'sm_shelly3em_base_topic')
+sed -i "s|<sm_shelly3em_base_topic>|$sm_shelly3em_base_topic|g" /solarflow/config.ini
+
+min_charge_power=$(bashio::config 'min_charge_power')
+sed -i "s|<min_charge_power>|$min_charge_power|g" /solarflow/config.ini
+
+max_discharge_power=$(bashio::config 'max_discharge_power')
+sed -i "s|<max_discharge_power>|$max_discharge_power|g" /solarflow/config.ini
+
+limit_inverter=$(bashio::config 'limit_inverter')
+sed -i "s|<limit_inverter>|$limit_inverter|g" /solarflow/config.ini
+
+max_inverter_limit=$(bashio::config 'max_inverter_limit')
+sed -i "s|<max_inverter_limit>|$max_inverter_limit|g" /solarflow/config.ini
+
+min_inverter_limit=$(bashio::config 'min_inverter_limit')
+sed -i "s|<min_inverter_limit>|$min_inverter_limit|g" /solarflow/config.ini
+
+discharge_during_daytime=$(bashio::config 'discharge_during_daytime')
+sed -i "s|<discharge_during_daytime>|$discharge_during_daytime|g" /solarflow/config.ini
+
+latitude=$(bashio::config 'latitude' ' ')
+sed -i "s|<latitude>|$latitude|g" /solarflow/config.ini
+
+longitude=$(bashio::config 'longitude' ' ')
+sed -i "s|<longitude>|$longitude|g" /solarflow/config.ini
+
+sunrise_offset=$(bashio::config 'sunrise_offset')
+sed -i "s|<sunrise_offset>|$sunrise_offset|g" /solarflow/config.ini
+
+sunset_offset=$(bashio::config 'sunset_offset')
+sed -i "s|<sunset_offset>|$sunset_offset|g" /solarflow/config.ini

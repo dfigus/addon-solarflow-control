@@ -15,3 +15,59 @@ arch:
 map:
   - addon_config:rw
   - share:rw
+options:
+  dtu_type: "OpenDTU"
+  smartmeter_type: "Smartmeter"
+  full_charge_interval: 32
+  control_bypass: true
+  mqtt_host: ""
+  mqtt_user: ""
+  mqtt_password: ""
+  dtu_base_topic: "solar"
+  inverter_max_power: 2000
+  ahoydtu_inverter_id: "0"
+  sm_rapid_change_diff: 500
+  sm_zero_offset: 20
+  sm_shelly3em_base_topic: "shellies/shellyem3/"
+  min_charge_power: 125
+  max_discharge_power: 150
+  limit_inverter: true
+  max_inverter_limit: 800
+  min_inverter_limit: 10
+  discharge_during_daytime: false
+  sunrise_offset: 60
+  sunset_offset: 60
+schema:
+  dtu_type: list(OpenDTU|AhoyDTU)
+  smartmeter_type: list(Smartmeter|PowerOpti|ShellyEM3)
+  product_id: str
+  device_id: str
+  full_charge_interval: int
+  control_bypass: bool
+  mqtt_host: str
+  mqtt_port: port?
+  mqtt_user: str?
+  mqtt_password: password?
+  dtu_base_topic: str
+  sf_inverter_channels: str
+  inverter_max_power: int?
+  opendtu_inverter_serial: str?
+  ahoydtu_inverter_id: int?
+  sm_rapid_change_diff: int?
+  sm_zero_offset: int?
+  sm_generic_base_topic: str?
+  sm_generic_cur_accessor: str?
+  sm_generic_total_accessor: str?
+  sm_poweropti_user: str?
+  sm_poweropti_password: password?
+  sm_shelly3em_base_topic: str?
+  min_charge_power: int?
+  max_discharge_power: int?
+  limit_inverter: bool?
+  max_inverter_limit: int?
+  min_inverter_limit: int?
+  discharge_during_daytime: bool?
+  latitude: float?
+  longitude: float?
+  sunrise_offset: int?
+  sunset_offset: int?

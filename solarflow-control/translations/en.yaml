@@ -1,0 +1,143 @@
+---
+configuration:
+  dtu_type:
+    name: DTU Type
+    description: >-
+      Type of the DTU. Either OpenDTU or AhoyDTU.
+  smartmeter_type:
+    name: Smartmeter Type
+    description: >-
+      Type of the Smartmeter. Either Smartmeter (generic, Tasmota, Hichi, etc.), PowerOpti or Shelly 3EM.
+  product_id:
+    name: Solarflow Product ID
+    description: >-
+      The product ID specifies the model of Solarflow hub to use: Hub-1200: "73bkTV" Hub-2000: "A8yh63"
+  device_id:
+    name: Solarflow Device ID
+    description: >-
+      The device ID of your Solarflow Hub (typically 8 characters).
+  full_charge_interval:
+    name: Full Charge Interval
+    description: >-
+      The time interval in hours that solarflow-control will try to ensure a full battery (i.e. no discharging if
+      battery hasn't been at 100% for this long)
+  control_bypass:
+    name: Control Bypass
+    description: >-
+      Let solarflow-control take over enabling/disabling the bypass of the hub (direct solarinput to hub output when
+      battery is full) this overrides the automatic switching by the hub's firmware, which is sometimes a bit wierd.
+  mqtt_host:
+    name: MQTT Host
+    description: >-
+      The hostname or IP address of your MQTT broker.
+  mqtt_port:
+    name: MQTT Port
+    description: >-
+      The port of your MQTT broker.
+  mqtt_user:
+    name: MQTT User
+    description: >-
+      The username for your MQTT broker.
+  mqtt_password:
+    name: MQTT Password
+    description: >-
+      The password for your MQTT broker.
+  dtu_base_topic:
+    name: DTU Base Topic
+    description: >-
+      The MQTT base topic your OpenDTU/AhoyDTU reports to.
+  sf_inverter_channels:
+    name: Solarflow Inverter Channels
+    description: >-
+      List of indices of the inverter channels/ports (as reported in the DTU) that the Solarflow Hub is connected to
+      typically the index starts at 1 as 0 is the output channel of the inverter e.g. 1,3 or 3 or [1,3]
+  inverter_max_power:
+    name: Inverter Maximum Power
+    description: >-
+      The maximum output power of your inverter, used to calculate correct absolute values.
+  opendtu_inverter_serial:
+    name: OpenDTU Inverter Serial
+    description: >-
+      The serial number of the inverter connected to the OpenDTU.
+  ahoydtu_inverter_id:
+    name: AhoyDTU Inverter ID
+    description: >-
+      The ID of the inverter connected to the AhoyDTU.
+  sm_rapid_change_diff:
+    name: Smartmeter Rapid Change Difference
+    description: >-
+      The rapid change difference defines the difference in W that has to be detected on the smartmeter readings to
+      consider it a fast drop or rise in demand. This helps a faster adjustment in switching various limits e.g.
+      when a water boiler is turned on/off
+  sm_zero_offset:
+    name: Smartmeter Zero Offset
+    description: >-
+      The zero offset defines the minimum power that is considered as a load. This is used to prevent the inverter
+      from switching on/off when the smartmeter is reading a small amount of power (e.g. standby power)
+  sm_generic_base_topic:
+    name: Generic Smartmeter Base Topic
+    description: >-
+      The MQTT base topic your generic smartmeter, Hichi, Tasmota, etc. reports to.
+  sm_generic_cur_accessor:
+    name: Generic Smartmeter Current Accessor
+    description: >-
+      The JSON accessor to the current power reading of your generic smartmeter. If Smartmeter reader posts
+      { "Power": {"Power_curr": 120, "Total_in": 12345.6} } then the accessor would be Power.Power_curr
+  sm_generic_total_accessor:
+    name: Generic Smartmeter Total Accessor
+    description: >-
+      The JSON accessor to the total power reading of your generic smartmeter. If Smartmeter reader posts
+      { "Power": {"Power_curr": 120, "Total_in": 12345.6} } then the accessor would be Power.Total_in
+  sm_poweropti_user:
+    name: PowerOpti User
+    description: >-
+      The username for your  Powerfox API of your PowerOpti smartmeter (internet connection required).
+  sm_poweropti_password:
+    name: PowerOpti Password
+    description: >-
+      The password for your Powerfox API of your PowerOpti smartmeter (internet connection required).
+  sm_shelly3em_base_topic:
+    name: Shelly 3EM Base Topic
+    description: >-
+      The MQTT base topic your Shelly 3EM reports to (defaults to shellies/shellyem3/). Note: MQTT is disabled by
+      default on the Shelly 3EM and needs to be enabled first.
+  min_charge_power:
+    name: Minimum Charge Power
+    description: >-
+      The minimum power that is required to start charging the battery.
+  max_discharge_power:
+    name: Maximum Discharge Power
+    description: >-
+      The maximum power that is allowed to be discharged from the battery.
+  limit_inverter:
+    name: Limit Inverter
+    description: >-
+      Limit the output to the inverter.
+  max_inverter_limit:
+    name: Maximum Inverter Limit
+    description: >-
+      The maximum power that is sent to the inverter.
+  min_inverter_limit:
+    name: Minimum Inverter Limit
+    description: >-
+      The minimum power that is sent to the inverter.
+  discharge_during_daytime:
+    name: Discharge During Daytime
+    description: >-
+      Allow discharging the battery during daytime.
+  latitude:
+    name: Latitude
+    description: >-
+      The latitude of your location. Used to calculate sunrise and sunset times.
+  longitude:
+    name: Longitude
+    description: >-
+      The longitude of your location. Used to calculate sunrise and sunset times.
+  sunrise_offset:
+    name: Sunrise Offset
+    description: >-
+      The offset in minutes before sunrise. Can be used to set the duration of what is considered "night".
+  sunset_offset:
+    name: Sunset Offset
+    description: >-
+      The offset in minutes after sunset. Can be used to set the duration of what is considered "night".
