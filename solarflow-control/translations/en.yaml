@@ -19,11 +19,13 @@ configuration:
   full_charge_interval:
     name: Full Charge Interval
     description: >-
-      The time interval in hours that solarflow-control will try to ensure a full battery (i.e. no discharging if battery hasn't been at 100% for this long)
+      The time interval in hours that solarflow-control will try to ensure a full battery (i.e. no discharging if
+      battery hasn't been at 100% for this long)
   control_bypass:
     name: Control Bypass
     description: >-
-      Let solarflow-control take over enabling/disabling the bypass of the hub (direct solarinput to hub output when battery is full) this overrides the automatic switching by the hub's firmware, which is sometimes a bit wierd.
+      Let solarflow-control take over enabling/disabling the bypass of the hub (direct solarinput to hub output when
+      battery is full) this overrides the automatic switching by the hub's firmware, which is sometimes a bit wierd.
   mqtt_host:
     name: MQTT Host
     description: >-
@@ -47,7 +49,8 @@ configuration:
   sf_inverter_channels:
     name: Solarflow Inverter Channels
     description: >-
-      List of indices of the inverter channels/ports (as reported in the DTU) that the Solarflow Hub is connected to typically the index starts at 1 as 0 is the output channel of the inverter e.g. 1,3 or 3 or [1,3]
+      List of indices of the inverter channels/ports (as reported in the DTU) that the Solarflow Hub is connected to
+      typically the index starts at 1 as 0 is the output channel of the inverter e.g. 1,3 or 3 or [1,3]
   inverter_max_power:
     name: Inverter Maximum Power
     description: >-
@@ -63,11 +66,14 @@ configuration:
   sm_rapid_change_diff:
     name: Smartmeter Rapid Change Difference
     description: >-
-      The rapid change difference defines the difference in W that has to be detected on the smartmeter readings to consider it a fast drop or rise in demand. This helps a faster adjustment in switching various limits e.g. when a water boiler is turned on/off
+      The rapid change difference defines the difference in W that has to be detected on the smartmeter readings to
+      consider it a fast drop or rise in demand. This helps a faster adjustment in switching various limits e.g.
+      when a water boiler is turned on/off
   sm_zero_offset:
     name: Smartmeter Zero Offset
     description: >-
-      The zero offset defines the minimum power that is considered as a load. This is used to prevent the inverter from switching on/off when the smartmeter is reading a small amount of power (e.g. standby power)
+      The zero offset defines the minimum power that is considered as a load. This is used to prevent the inverter
+      from switching on/off when the smartmeter is reading a small amount of power (e.g. standby power)
   sm_generic_base_topic:
     name: Generic Smartmeter Base Topic
     description: >-
@@ -75,11 +81,13 @@ configuration:
   sm_generic_cur_accessor:
     name: Generic Smartmeter Current Accessor
     description: >-
-      The JSON accessor to the current power reading of your generic smartmeter. If Smartmeter reader posts { "Power": {"Power_curr": 120, "Total_in": 12345.6} } then the accessor would be Power.Power_curr
+      The JSON accessor to the current power reading of your generic smartmeter. If Smartmeter reader posts
+      { "Power": {"Power_curr": 120, "Total_in": 12345.6} } then the accessor would be Power.Power_curr
   sm_generic_total_accessor:
     name: Generic Smartmeter Total Accessor
     description: >-
-      The JSON accessor to the total power reading of your generic smartmeter. If Smartmeter reader posts { "Power": {"Power_curr": 120, "Total_in": 12345.6} } then the accessor would be Power.Total_in
+      The JSON accessor to the total power reading of your generic smartmeter. If Smartmeter reader posts
+      { "Power": {"Power_curr": 120, "Total_in": 12345.6} } then the accessor would be Power.Total_in
   sm_poweropti_user:
     name: PowerOpti User
     description: >-
@@ -91,7 +99,8 @@ configuration:
   sm_shelly3em_base_topic:
     name: Shelly 3EM Base Topic
     description: >-
-      The MQTT base topic your Shelly 3EM reports to (defaults to shellies/shellyem3/). Note: MQTT is disabled by default on the Shelly 3EM and needs to be enabled first.
+      The MQTT base topic your Shelly 3EM reports to (defaults to shellies/shellyem3/). Note: MQTT is disabled by
+      default on the Shelly 3EM and needs to be enabled first.
   min_charge_power:
     name: Minimum Charge Power
     description: >-
