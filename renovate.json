@@ -1,18 +1,28 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "rebaseWhen": "behind-base-branch",
-  "reviewers": ["dfigus"],
-  "assignees": ["dfigus"],
+  "reviewers": [
+    "dfigus"
+  ],
+  "assignees": [
+    "dfigus"
+  ],
   "dependencyDashboard": true,
-  "labels": ["dependencies", "no-stale"],
+  "labels": [
+    "dependencies",
+    "no-stale"
+  ],
   "configMigration": true,
   "commitMessagePrefix": "⬆️",
   "commitMessageTopic": "{{depName}}",
-  "extends": ["workarounds:reduceRepologyServerLoad"],
+  "extends": [],
   "customManagers": [
     {
       "customType": "regex",
-      "fileMatch": ["/Dockerfile$", "/build.yaml$"],
+      "fileMatch": [
+        "/Dockerfile$",
+        "/build.yaml$"
+      ],
       "matchStringsStrategy": "any",
       "matchStrings": [
         "ARG BUILD_FROM=(?<depName>.*?):(?<currentValue>.*?)\\s+",
@@ -22,7 +32,9 @@
     },
     {
       "customType": "regex",
-      "fileMatch": ["/Dockerfile$"],
+      "fileMatch": [
+        "/Dockerfile$"
+      ],
       "matchStringsStrategy": "any",
       "matchStrings": [
         "\\s\\s(?<package>[a-z0-9][a-z0-9-_]+)=(?<currentValue>[a-z0-9-_.]+)\\s+"
@@ -33,17 +45,25 @@
     },
     {
       "customType": "regex",
-      "fileMatch": ["/Dockerfile$"],
+      "fileMatch": [
+        "/Dockerfile$"
+      ],
       "matchStringsStrategy": "any",
-      "matchStrings": ["ARG SOLARFLOW_RELEASE=\"(?<currentValue>.*?)\"\\n"],
+      "matchStrings": [
+        "ARG SOLARFLOW_RELEASE=\"(?<currentValue>.*?)\"\\n"
+      ],
       "depNameTemplate": "reinhard-brandstaedter/solarflow-control",
       "datasourceTemplate": "github-releases"
     },
     {
       "customType": "regex",
-      "fileMatch": ["/Dockerfile$"],
+      "fileMatch": [
+        "/Dockerfile$"
+      ],
       "matchStringsStrategy": "any",
-      "matchStrings": ["ARG SOLARFLOW_BT_DIGEST=\"(?<currentDigest>.*?)\"\\n"],
+      "matchStrings": [
+        "ARG SOLARFLOW_BT_DIGEST=\"(?<currentDigest>.*?)\"\\n"
+      ],
       "currentValueTemplate": "master",
       "depNameTemplate": "solarflow-bt-manager",
       "packageNameTemplate": "https://github.com/reinhard-brandstaedter/solarflow-bt-manager/",
@@ -52,35 +72,58 @@
   ],
   "packageRules": [
     {
-      "matchDatasources": ["github-releases", "git-refs"],
+      "matchDatasources": [
+        "github-releases",
+        "git-refs"
+      ],
       "automerge": true,
       "minimumReleaseAge": "1 day",
       "versioning": "regex:^(?<major>\\d+)\\-(?<minor>\\d+)\\-(?<patch>\\d+)(\\-\\-(?<build>\\d+\\-\\d+\\-\\d+))$",
-      "automergeSchedule": ["on saturday"]
+      "automergeSchedule": [
+        "on saturday"
+      ]
     },
     {
-      "matchDatasources": ["repology"],
+      "matchDatasources": [
+        "repology"
+      ],
       "groupName": "Alpine packages",
       "automerge": true
     },
     {
       "groupName": "Add-on base image",
-      "matchDatasources": ["docker"]
+      "matchDatasources": [
+        "docker"
+      ]
     },
     {
       "groupName": "Add-on base image",
-      "matchDatasources": ["docker"],
-      "matchUpdateTypes": ["minor", "patch"],
+      "matchDatasources": [
+        "docker"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
       "automerge": true
     },
     {
-      "matchManagers": ["pip_requirements"],
-      "addLabels": ["python"],
+      "matchManagers": [
+        "pip_requirements"
+      ],
+      "addLabels": [
+        "python"
+      ],
       "rangeStrategy": "pin"
     },
     {
-      "matchManagers": ["pip_requirements"],
-      "matchUpdateTypes": ["minor", "patch"],
+      "matchManagers": [
+        "pip_requirements"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
       "automerge": true
     }
   ]
