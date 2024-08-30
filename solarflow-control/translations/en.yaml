@@ -71,7 +71,7 @@ configuration:
   sm_generic_base_topic:
     name: Generic Smartmeter Base Topic
     description: >-
-     The MQTT base topic your generic smartmeter, Hichi, Tasmota, etc. reports to.
+      The MQTT base topic your generic smartmeter, Hichi, Tasmota, etc. reports to.
   sm_generic_cur_accessor:
     name: Generic Smartmeter Current Accessor
     description: >-
