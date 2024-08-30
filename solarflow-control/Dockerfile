@@ -4,6 +4,8 @@ FROM alpine:3.20 AS builder
 ############## builder ##############
 
 ARG SOLARFLOW_RELEASE="0.71"
+ARG SOLARFLOW_BT_DIGEST="05ea01a447265ff235557af7d2100d28cc18c4c9"
+
 
 RUN \
     echo "**** install build packages ****" && \
@@ -15,6 +17,11 @@ RUN \
     cd /tmp/solarflow && \
     git checkout "${SOLARFLOW_RELEASE}"
 
+    RUN \
+    git clone https://github.com/reinhard-brandstaedter/solarflow-bt-manager /tmp/solarflow-bt && \
+    cd /tmp/solarflow-bt && \
+    git checkout "${SOLARFLOW_BT_DIGEST}"
+
 
 ####### runtime ###########
 # hadolint ignore=DL3006
@@ -22,8 +29,10 @@ FROM ${BUILD_FROM}
 
 COPY --from=builder /tmp/solarflow/src/solarflow /solarflow
 COPY --from=builder /tmp/solarflow/src/requirements.txt /tmp/requirements.txt
+COPY --from=builder /tmp/solarflow-bt/src/ /solarflow-bt
 
 RUN pip3 install --no-cache-dir -Ur /tmp/requirements.txt
+RUN pip3 install --no-cache-dir -Ur /solarflow-bt/requirements.txt
 
 # Copy root filesystem
 COPY rootfs /
