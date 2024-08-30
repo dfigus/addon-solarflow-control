@@ -55,7 +55,7 @@
       "matchDatasources": ["github-releases", "git-refs"],
       "automerge": true,
       "minimumReleaseAge": "1 day",
-      "versioning": "regex:^(?<major>\\d+)\\-(?<minor>\\d+)\\-(?<patch>\\d+)(\\-\\-(?<build>\\d+\\-\\d+\\-\\d+))$",
+      "versioning": "loose",
       "automergeSchedule": ["on saturday"]
     },
     {
