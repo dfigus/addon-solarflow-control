@@ -90,7 +90,7 @@ SOFTWARE.
 [github-actions]: https://github.com/dfigus/addon-solarflow-control/actions
 [issues]: https://github.com/dfigus/addon-solarflow-control/issues
 [discussions]: https://github.com/dfigus/addon-solarflow-control/discussions
-[issues-sfc]:https://github.com/reinhard-brandstaedter/solarflow-control/issues
+[issues-sfc]: https://github.com/reinhard-brandstaedter/solarflow-control/issues
 [discussions-sfc]: https://github.com/reinhard-brandstaedter/solarflow-control/discussions
 [license-shield]: https://img.shields.io/github/license/dfigus/addon-solarflow-control.svg
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2024.svg

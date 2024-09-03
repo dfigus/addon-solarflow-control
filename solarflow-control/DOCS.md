@@ -24,7 +24,7 @@ comparison to installing any other Home Assistant add-on.
 1. Go to the configuration tab and configure the mandatory parameters
 1. Start the "Solarflow Control" add-on.
 1. Check the logs of the "Solarflow Control" to see if everything went well. Solarflow Control will
-output status messages regularily
+   output status messages regularily
 
 ## Changelog & Releases
 
