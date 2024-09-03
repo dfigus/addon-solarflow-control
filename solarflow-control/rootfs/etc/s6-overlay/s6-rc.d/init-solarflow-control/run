@@ -26,6 +26,7 @@ declare ahoydtu_inverter_id
 
 declare sm_rapid_change_diff
 declare sm_zero_offset
+declare sm_scaling_factor
 declare sm_generic_base_topic
 declare sm_generic_cur_accessor
 declare sm_generic_total_accessor
@@ -54,8 +55,8 @@ sed -i "s|<dtu_type>|$dtu_type|g" /solarflow/config.ini
 smartmeter_type=$(bashio::config 'smartmeter_type')
 sed -i "s|<smartmeter_type>|$smartmeter_type|g" /solarflow/config.ini
 
-device_id=$(bashio::config 'product_id')
-sed -i "s|<product_id>|$device_id|g" /solarflow/config.ini
+product_id=$(bashio::config 'product_id')
+sed -i "s|<product_id>|$product_id|g" /solarflow/config.ini
 
 device_id=$(bashio::config 'device_id')
 sed -i "s|<device_id>|$device_id|g" /solarflow/config.ini
@@ -97,6 +98,9 @@ sed -i "s|<sm_rapid_change_diff>|$sm_rapid_change_diff|g" /solarflow/config.ini
 
 sm_zero_offset=$(bashio::config 'sm_zero_offset')
 sed -i "s|<sm_zero_offset>|$sm_zero_offset|g" /solarflow/config.ini
+
+sm_scaling_factor=$(bashio::config 'sm_scaling_factor')
+sed -i "s|<sm_scaling_factor>|$sm_scaling_factor|g" /solarflow/config.ini
 
 sm_generic_base_topic=$(bashio::config 'sm_generic_base_topic')
 sed -i "s|<sm_generic_base_topic>|$sm_generic_base_topic|g" /solarflow/config.ini
