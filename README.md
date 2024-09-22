@@ -15,11 +15,17 @@
 [![GitHub Activity][commits-shield]][commits]
 [![Community Forum][forum-shield]][forum]
 
-Solarflow Control
+Local control for Zendure Solarflow Hub.
 
 ## About
 
-Solarflow Control
+[Solarflow Control][sf-control] is a full local control for Zendure Solarflow Hub components
+developed by [Reinhard Weber (Brandstaedter)][reinhard-brandstaedter]. It has the following main
+features:
+
+- Read live telemetry data locally without the Zendure app and cloud
+- Update the settings locally without the Zendure app and cloud
+- Automatically control the charging/discharging and the power output based on the acutal consumption
 
 [:books: Read the full add-on documentation][docs]
 
@@ -27,7 +33,10 @@ Solarflow Control
 
 Got questions?
 
-Please start a [discussion][discussions] or create an [issue][issues] on Github
+Please start a [discussion][discussions] or create an [issue][issues] on Github for the addon. In case
+of questions regarding [Solarflow Control][sf-control], you can start a [discussion][discussions-sfc]
+or create an [issue][issues-sfc] in the original GitHub [repository][sf-control] of
+[Reinhard Weber (Brandstaedter)][reinhard-brandstaedter].
 
 ## Contributing
 
@@ -50,7 +59,7 @@ check [the contributor's page][contributors].
 
 MIT License
 
-Copyright (c) 2023-2024 Daniel Figus
+Copyright (c) 2024 Daniel Figus
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -73,18 +82,16 @@ SOFTWARE.
 [contributors]: https://github.com/dfigus/addon-solarflow-control/graphs/contributors
 [docs]: https://github.com/dfigus/addon-solarflow-control/blob/main/tvheadend/DOCS.md
 [forum-shield]: https://img.shields.io/badge/community-forum-brightgreen.svg
-[picons]: https://github.com/picons/picons
-[comskip]: https://github.com/erikkaashoek/Comskip
-[comchap]: https://github.com/BrettSheleski/comchap
-[streamlink]: https://streamlink.github.io/
 [forum]: https://community.home-assistant.io/
-[gautham]: https://github.com/GauthamVarmaK
-[dfigus]: https://github.com/dfigus
+[reinhard-brandstaedter]: https://github.com/reinhard-brandstaedter
+[sf-control]: https://github.com/reinhard-brandstaedter/solarflow-control
 [frenck]: https://github.com/frenck
 [github-actions-shield]: https://github.com/dfigus/addon-solarflow-control/workflows/CI/badge.svg
 [github-actions]: https://github.com/dfigus/addon-solarflow-control/actions
 [issues]: https://github.com/dfigus/addon-solarflow-control/issues
 [discussions]: https://github.com/dfigus/addon-solarflow-control/discussions
+[issues-sfc]: https://github.com/reinhard-brandstaedter/solarflow-control/issues
+[discussions-sfc]: https://github.com/reinhard-brandstaedter/solarflow-control/discussions
 [license-shield]: https://img.shields.io/github/license/dfigus/addon-solarflow-control.svg
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2024.svg
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-production%20ready-brightgreen.svg
