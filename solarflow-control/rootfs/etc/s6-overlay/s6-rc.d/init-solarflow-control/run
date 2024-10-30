@@ -11,6 +11,7 @@ declare product_id
 declare device_id
 declare full_charge_interval
 declare control_bypass
+declare control_soc
 
 declare mqtt_host
 declare mqtt_port
@@ -46,6 +47,8 @@ declare latitude
 declare longitude
 declare sunrise_offset
 declare sunset_offset
+declare battery_low
+declare battery_high
 
 bashio::log.info 'Updating Solarflow Control configuration...'
 
@@ -66,6 +69,9 @@ sed -i "s|<full_charge_interval>|$full_charge_interval|g" /solarflow/config.ini
 
 control_bypass=$(bashio::config 'control_bypass')
 sed -i "s|<control_bypass>|$control_bypass|g" /solarflow/config.ini
+
+control_soc=$(bashio::config 'control_soc')
+sed -i "s|<control_soc>|$control_soc|g" /solarflow/config.ini
 
 mqtt_host=$(bashio::config 'mqtt_host')
 sed -i "s|<mqtt_host>|$mqtt_host|g" /solarflow/config.ini
@@ -149,3 +155,9 @@ sed -i "s|<sunrise_offset>|$sunrise_offset|g" /solarflow/config.ini
 
 sunset_offset=$(bashio::config 'sunset_offset')
 sed -i "s|<sunset_offset>|$sunset_offset|g" /solarflow/config.ini
+
+battery_low=$(bashio::config 'battery_low')
+sed -i "s|<battery_low>|$battery_low|g" /solarflow/config.ini
+
+battery_high=$(bashio::config 'battery_high')
+sed -i "s|<battery_high>|$battery_high|g" /solarflow/config.ini

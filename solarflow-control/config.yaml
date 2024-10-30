@@ -20,6 +20,9 @@ options:
   smartmeter_type: "Smartmeter"
   full_charge_interval: 32
   control_bypass: true
+  control_soc: false
+  battery_low: 5
+  battery_high: 100
   mqtt_host: ""
   mqtt_user: ""
   mqtt_password: ""
@@ -49,6 +52,9 @@ schema:
   device_id: str
   full_charge_interval: int
   control_bypass: bool
+  control_soc: bool
+  battery_low: int
+  battery_high: int
   mqtt_host: str
   mqtt_port: port?
   mqtt_user: str?
