@@ -26,6 +26,11 @@ configuration:
     description: >-
       Let solarflow-control take over enabling/disabling the bypass of the hub (direct solarinput to hub output when
       battery is full) this overrides the automatic switching by the hub's firmware, which is sometimes a bit wierd.
+  control_soc:
+    name: Control SoC
+    description: >-
+      Allow solarflow-control to change the SolarFlow Hub's minimum and maxiumum battery levels which are considered
+      empty (stop discharging) or full (stop charging)
   mqtt_host:
     name: MQTT Host
     description: >-
@@ -141,3 +146,11 @@ configuration:
     name: Sunset Offset
     description: >-
       The offset in minutes after sunset. Can be used to set the duration of what is considered "night".
+  battery_low:
+    name: Battery Low
+    description: >-
+      The battery level when the Solarflow Hub will shutdown the battery and no longer allow furher discharging.
+  battery_high:
+    name: Battery High
+    description: >-
+      The battery level when the Solarflow Hub will consider the battery fully charged and stop further charging.
