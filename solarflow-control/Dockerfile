@@ -13,7 +13,7 @@ RUN \
     apk add --no-cache git
 
 RUN \
-    git clone https://github.com/reinhard-brandstaedter/solarflow-control /tmp/solarflow && \
+    git clone https://github.com/atrox06/solarflow-control.git /tmp/solarflow && \
     cd /tmp/solarflow && \
     git checkout "${SOLARFLOW_RELEASE}"
 
@@ -59,7 +59,7 @@ LABEL \
     org.opencontainers.image.vendor="dfigus" \
     org.opencontainers.image.authors="Daniel Figus <10271668+dfigus@users.noreply.github.com>" \
     org.opencontainers.image.licenses="MIT" \
-    org.opencontainers.image.url="https://github.com/dfigus/addon-solarflow-control" \
+    org.opencontainers.image.url="https://github.com/atrox06/addon-solarflow-control" \
     org.opencontainers.image.source="https://github.com/${BUILD_REPOSITORY}" \
     org.opencontainers.image.documentation="https://github.com/${BUILD_REPOSITORY}/blob/main/README.md" \
     org.opencontainers.image.created=${BUILD_DATE} \
