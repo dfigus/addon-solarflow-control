@@ -16,13 +16,24 @@ map:
   - addon_config:rw
   - share:rw
 options:
-  dtu_type: "OpenDTU"
+  dtu_type: "None"
+  use_cloud: true
+  grid_charge: true
   smartmeter_type: "Smartmeter"
   full_charge_interval: 32
   control_bypass: true
   control_soc: false
   battery_low: 5
   battery_high: 100
+  cloud_web_user: ""
+  cloud_web_pwd: ""
+  web_token_url: "https://app.zendure.tech/eu/auth/app/token"
+  device_list_url: "https://app.zendure.tech/eu/productModule/device/queryDeviceListByConsumerId"
+  cloud_mqtt_port: 1883
+  cloud_mqtt_host: "mqtteu.zen-iot.com"
+  cloud_mqtt_user: "zenApp"
+  cloud_mqtt_pwd: ""
+  roofsolar_base_topic: "roofsolar"
   mqtt_host: ""
   mqtt_user: ""
   mqtt_password: ""
@@ -46,7 +57,9 @@ options:
   sunrise_offset: 60
   sunset_offset: 60
 schema:
-  dtu_type: list(OpenDTU|AhoyDTU)
+  dtu_type: list(OpenDTU|AhoyDTU|None)
+  use_cloud: bool
+  grid_charge: bool
   smartmeter_type: list(Smartmeter|PowerOpti|ShellyEM3)
   product_id: str
   device_id: str
@@ -55,6 +68,15 @@ schema:
   control_soc: bool
   battery_low: int
   battery_high: int
+  cloud_web_user: str?
+  cloud_web_pwd: password?
+  web_token_url: str
+  device_list_url: str
+  cloud_mqtt_port: port?
+  cloud_mqtt_host: str
+  cloud_mqtt_user: str?
+  cloud_mqtt_pwd: password?
+  roofsolar_base_topic: str
   mqtt_host: str
   mqtt_port: port?
   mqtt_user: str?
