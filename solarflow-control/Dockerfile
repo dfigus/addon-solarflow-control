@@ -6,7 +6,6 @@ FROM alpine:3.20 AS builder
 ARG SOLARFLOW_RELEASE="0.75"
 ARG SOLARFLOW_BT_DIGEST="05ea01a447265ff235557af7d2100d28cc18c4c9"
 
-
 RUN \
     echo "**** install build packages ****" && \
     apk update && \
@@ -14,15 +13,14 @@ RUN \
 
 RUN \
     git clone https://github.com/atrox06/solarflow-control.git /tmp/solarflow && \
-    cd /tmp/solarflow 
+    cd /tmp/solarflow || exit
     #&& git checkout "${SOLARFLOW_RELEASE}"
 
 RUN \
     git clone https://github.com/reinhard-brandstaedter/solarflow-bt-manager /tmp/solarflow-bt && \
-    cd /tmp/solarflow-bt 
+    cd /tmp/solarflow-bt || exit
     #&& 
     #git checkout "${SOLARFLOW_BT_DIGEST}"
-
 
 ####### runtime ###########
 # hadolint ignore=DL3006
