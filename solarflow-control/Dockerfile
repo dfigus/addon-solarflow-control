@@ -14,12 +14,13 @@ RUN \
 
 RUN \
     git clone https://github.com/atrox06/solarflow-control.git /tmp/solarflow && \
-    cd /tmp/solarflow && \
-    #git checkout "${SOLARFLOW_RELEASE}"
+    cd /tmp/solarflow 
+    #&& git checkout "${SOLARFLOW_RELEASE}"
 
 RUN \
     git clone https://github.com/reinhard-brandstaedter/solarflow-bt-manager /tmp/solarflow-bt && \
-    cd /tmp/solarflow-bt && \
+    cd /tmp/solarflow-bt 
+    #&& 
     #git checkout "${SOLARFLOW_BT_DIGEST}"
 
 
