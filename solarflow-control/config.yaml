@@ -48,8 +48,8 @@ options:
   sm_zero_offset: 20
   sm_scaling_factor: 1
   sm_shelly3em_base_topic: "shellies/shellyem3/"
-  min_grid_charge_power = 100
-  max_grid_charge_power = 1200
+  min_grid_charge_power: 100
+  max_grid_charge_power: 1200
   min_charge_power: 125
   max_discharge_power: 150
   limit_inverter: true
