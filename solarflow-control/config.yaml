@@ -3,7 +3,7 @@ name: Solarflow Control
 version: dev
 slug: solarflow-control
 description: Solarflow Control
-url: "https://github.com/dfigus/addon-solarflow-control"
+url: "https://github.com/atrox06/addon-solarflow-control"
 init: false
 panel_icon: mdi:solar-power-variant
 arch:
@@ -28,7 +28,7 @@ options:
   cloud_web_user: ""
   cloud_web_pwd: ""
   web_token_url: "https://app.zendure.tech/eu/auth/app/token"
-  device_list_url: "https://app.zendure.tech/eu/productModule/device/queryDeviceListByConsumerId"
+  web_device_list_url: "https://app.zendure.tech/eu/productModule/device/queryDeviceListByConsumerId"
   cloud_mqtt_port: 1883
   cloud_mqtt_host: "mqtteu.zen-iot.com"
   cloud_mqtt_user: "zenApp"
@@ -48,6 +48,8 @@ options:
   sm_zero_offset: 20
   sm_scaling_factor: 1
   sm_shelly3em_base_topic: "shellies/shellyem3/"
+  min_grid_charge_power = 100
+  max_grid_charge_power = 1200
   min_charge_power: 125
   max_discharge_power: 150
   limit_inverter: true
@@ -71,7 +73,7 @@ schema:
   cloud_web_user: str?
   cloud_web_pwd: password?
   web_token_url: str
-  device_list_url: str
+  web_device_list_url: str
   cloud_mqtt_port: port?
   cloud_mqtt_host: str
   cloud_mqtt_user: str?
@@ -95,6 +97,8 @@ schema:
   sm_poweropti_user: str?
   sm_poweropti_password: password?
   sm_shelly3em_base_topic: str?
+  min_grid_charge_power = int?
+  max_grid_charge_power = int?
   min_charge_power: int?
   max_discharge_power: int?
   limit_inverter: bool?
