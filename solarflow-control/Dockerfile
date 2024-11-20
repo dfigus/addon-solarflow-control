@@ -14,13 +14,13 @@ RUN \
 RUN \
     git clone https://github.com/atrox06/solarflow-control.git /tmp/solarflow && \
     cd /tmp/solarflow || exit
-    #&& git checkout "${SOLARFLOW_RELEASE}"
+#&& git checkout "${SOLARFLOW_RELEASE}"
 
 RUN \
     git clone https://github.com/reinhard-brandstaedter/solarflow-bt-manager /tmp/solarflow-bt && \
     cd /tmp/solarflow-bt || exit
-    #&& 
-    #git checkout "${SOLARFLOW_BT_DIGEST}"
+#&&
+#git checkout "${SOLARFLOW_BT_DIGEST}"
 
 ####### runtime ###########
 # hadolint ignore=DL3006
@@ -52,7 +52,7 @@ LABEL \
     io.hass.arch="${BUILD_ARCH}" \
     io.hass.type="addon" \
     io.hass.version=${BUILD_VERSION} \
-    maintainer="Daniel Figus <10271668+dfigus@users.noreply.github.com>" \
+    maintainer="Joerg Maier " \
     org.opencontainers.image.title="${BUILD_NAME}" \
     org.opencontainers.image.description="${BUILD_DESCRIPTION}" \
     org.opencontainers.image.vendor="dfigus" \

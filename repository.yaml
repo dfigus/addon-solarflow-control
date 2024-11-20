@@ -1,4 +1,4 @@
-# https://developers.home-assistant.io/docs/add-ons/repository#repository-configuration
+---
 name: solarflow Home Assistant add-on repository
 url: "https://github.com/atrox06/addon-solarflow-control"
 maintainer: Joerg Maier <awesome@example.com>
