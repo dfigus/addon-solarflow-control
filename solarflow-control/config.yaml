@@ -97,8 +97,8 @@ schema:
   sm_poweropti_user: str?
   sm_poweropti_password: password?
   sm_shelly3em_base_topic: str?
-  min_grid_charge_power = int?
-  max_grid_charge_power = int?
+  min_grid_charge_power: int?
+  max_grid_charge_power: int?
   min_charge_power: int?
   max_discharge_power: int?
   limit_inverter: bool?
