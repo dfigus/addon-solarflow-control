@@ -51,7 +51,8 @@ options:
   min_grid_charge_power: 100
   max_grid_charge_power: 1200
   min_charge_power: 125
-  max_discharge_power: 150
+  max_discharge_power: 1200
+  min_discharge_power: 125
   limit_inverter: true
   max_inverter_limit: 800
   min_inverter_limit: 10
@@ -101,6 +102,7 @@ schema:
   max_grid_charge_power: int?
   min_charge_power: int?
   max_discharge_power: int?
+  min_discharge_power: int?
   limit_inverter: bool?
   max_inverter_limit: int?
   min_inverter_limit: int?
