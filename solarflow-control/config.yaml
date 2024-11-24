@@ -1,6 +1,6 @@
 ---
 name: Hyper 2000 Solarflow Control
-version: "0.1.4"
+version: "0.1.5"
 slug: solarflow-control
 description: Hyper 2000 Solarflow Control is a Home Assistant add-on that allows you to control your solar power system.
 url: "https://github.com/atrox06/addon-solarflow-control"
