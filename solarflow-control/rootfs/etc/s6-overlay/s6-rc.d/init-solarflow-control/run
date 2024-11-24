@@ -23,7 +23,7 @@ declare web_device_list_url
 declare cloud_mqtt_port
 declare cloud_mqtt_host
 declare cloud_mqtt_user
-declare cloud_mqtt_password
+declare cloud_mqtt_pwd
 declare roofsolar_base_topic
 declare mqtt_host
 declare mqtt_port
@@ -225,4 +225,4 @@ max_grid_charge_power=$(bashio::config 'max_grid_charge_power')
 sed -i "s|<max_grid_charge_power>|$max_grid_charge_power|g" /solarflow/config.ini
 
 min_discharge_power=$(bashio::config 'min_discharge_power')
-sed -i "s|<min_discharge_power>|$min_grid_charge_power|g" /solarflow/config.ini
+sed -i "s|<min_discharge_power>|$min_discharge_power|g" /solarflow/config.ini

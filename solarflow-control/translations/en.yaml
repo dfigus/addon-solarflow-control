@@ -161,12 +161,12 @@ configuration:
   grid_charge:
     name: Grid Charge
     description: >-
-      Allow the Solarflow Hub to charge from the grid.
+      Allow the Hyper 2000 to charge from the grid instead of the solar panels.
   cloud_web_user:
     name: Cloud Web User
     description: >-
       The username for the Zendure App.
-  cloud_web_pwd:
+  cloud_web_password:
     name: Cloud Web Password
     description: >-
       The password for the Zendure App.
@@ -190,7 +190,7 @@ configuration:
     name: Cloud MQTT User
     description: >-
       The username for the cloud MQTT broker.
-  cloud_mqtt_pwd:
+  cloud_mqtt_password:
     name: Cloud MQTT Password
     description: >-
       The password for the cloud MQTT broker.
