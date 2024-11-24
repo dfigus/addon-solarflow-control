@@ -154,3 +154,60 @@ configuration:
     name: Battery High
     description: >-
       The battery level when the Solarflow Hub will consider the battery fully charged and stop further charging.
+  use_cloud:
+    name: Use Cloud
+    description: >-
+      Use the cloud to control the Solarflow Hub.
+  grid_charge:
+    name: Grid Charge
+    description: >-
+      Allow the Solarflow Hub to charge from the grid.
+  cloud_web_user:
+    name: Cloud Web User
+    description: >-
+      The username for the Zendure App.
+  cloud_web_pwd:
+    name: Cloud Web Password
+    description: >-
+      The password for the Zendure App.
+  web_token_url:
+    name: Web Token URL
+    description: >-
+      The URL to get the token for the Zendure MQTT userid.
+  web_device_list_url:
+    name: Web Device List URL
+    description: >-
+      The URL to get the list of devices to activate the Zendure MQTT userid.
+  cloud_mqtt_port:  
+    name: Cloud MQTT Port
+    description: >-
+      The port of the cloud MQTT broker.
+  cloud_mqtt_host:
+    name: Cloud MQTT Host
+    description: >-
+      The hostname or IP address of the cloud MQTT broker.
+  cloud_mqtt_user:  
+    name: Cloud MQTT User
+    description: >-
+      The username for the cloud MQTT broker.
+  cloud_mqtt_pwd:
+    name: Cloud MQTT Password
+    description: >-
+      The password for the cloud MQTT broker.
+  roofsolar_base_topic:
+    name: Roofsolar Base Topic
+    description: >-
+      The MQTT base topic your Roofsolar reports to.
+  min_grid_charge_power:
+    name: Minimum Grid Charge Power
+    description: >-
+      The minimum power that is required to start charging the battery from the grid.
+  max_grid_charge_power:
+    name: Maximum Grid Charge Power
+    description: >-
+      The maximum power that is allowed to be charged from the grid.
+  min_discharge_power:
+    name: Minimum Discharge Power
+    description: >-
+      The minimum power that is required to start discharging the battery.
+  

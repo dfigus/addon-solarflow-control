@@ -26,13 +26,13 @@ options:
   battery_low: 5
   battery_high: 100
   cloud_web_user: ""
-  cloud_web_pwd: ""
+  cloud_web_password: ""
   web_token_url: "https://app.zendure.tech/eu/auth/app/token"
   web_device_list_url: "https://app.zendure.tech/eu/productModule/device/queryDeviceListByConsumerId"
   cloud_mqtt_port: 1883
   cloud_mqtt_host: "mqtteu.zen-iot.com"
   cloud_mqtt_user: "zenApp"
-  cloud_mqtt_pwd: ""
+  cloud_mqtt_password: ""
   roofsolar_base_topic: "roofsolar"
   mqtt_host: ""
   mqtt_user: ""
@@ -72,13 +72,13 @@ schema:
   battery_low: int
   battery_high: int
   cloud_web_user: str?
-  cloud_web_pwd: password?
+  cloud_web_password: password?
   web_token_url: str
   web_device_list_url: str
   cloud_mqtt_port: port?
   cloud_mqtt_host: str
   cloud_mqtt_user: str?
-  cloud_mqtt_pwd: password?
+  cloud_mqtt_password: password?
   roofsolar_base_topic: str
   mqtt_host: str
   mqtt_port: port?

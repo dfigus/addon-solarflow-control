@@ -17,13 +17,13 @@ declare control_soc
 declare battery_low
 declare battery_high
 declare cloud_web_user
-declare cloud_web_pwd
+declare cloud_web_password
 declare web_token_url
 declare web_device_list_url
 declare cloud_mqtt_port
 declare cloud_mqtt_host
 declare cloud_mqtt_user
-declare cloud_mqtt_pwd
+declare cloud_mqtt_password
 declare roofsolar_base_topic
 declare mqtt_host
 declare mqtt_port
@@ -49,6 +49,7 @@ declare sm_poweropti_password
 declare sm_shelly3em_base_topic
 
 declare min_charge_power
+declare min_discharge_power
 declare max_discharge_power
 declare limit_inverter
 declare max_inverter_limit
@@ -60,6 +61,9 @@ declare sunrise_offset
 declare sunset_offset
 declare battery_low
 declare battery_high
+
+declare min_grid_charge_power
+declare max_grid_charge_power
 
 bashio::log.info 'Updating Solarflow Control configuration...'
 
@@ -100,8 +104,8 @@ sed -i "s|<battery_high>|$battery_high|g" /solarflow/config.ini
 cloud_web_user=$(bashio::config 'cloud_web_user')
 sed -i "s|<cloud_web_user>|$cloud_web_user|g" /solarflow/config.ini
 
-cloud_web_pwd=$(bashio::config 'cloud_web_pwd')
-sed -i "s|<cloud_web_pwd>|$cloud_web_pwd|g" /solarflow/config.ini
+cloud_web_pwd=$(bashio::config 'cloud_web_password')
+sed -i "s|<cloud_web_password>|$cloud_web_password|g" /solarflow/config.ini
 
 web_token_url=$(bashio::config 'web_token_url')
 sed -i "s|<web_token_url>|$web_token_url|g" /solarflow/config.ini
@@ -118,8 +122,8 @@ sed -i "s|<cloud_mqtt_host>|$cloud_mqtt_host|g" /solarflow/config.ini
 cloud_mqtt_user=$(bashio::config 'cloud_mqtt_user')
 sed -i "s|<cloud_mqtt_user>|$cloud_mqtt_user|g" /solarflow/config.ini
 
-cloud_mqtt_pwd=$(bashio::config 'cloud_mqtt_pwd')
-sed -i "s|<cloud_mqtt_pwd>|$cloud_mqtt_pwd|g" /solarflow/config.ini
+cloud_mqtt_pwd=$(bashio::config 'cloud_mqtt_password')
+sed -i "s|<cloud_mqtt_password>|$cloud_mqtt_password|g" /solarflow/config.ini
 
 roofsolar_base_topic=$(bashio::config 'roofsolar_base_topic')
 sed -i "s|<roofsolar_base_topic>|$roofsolar_base_topic|g" /solarflow/config.ini
@@ -213,3 +217,12 @@ sed -i "s|<battery_low>|$battery_low|g" /solarflow/config.ini
 
 battery_high=$(bashio::config 'battery_high')
 sed -i "s|<battery_high>|$battery_high|g" /solarflow/config.ini
+
+min_grid_charge_power=$(bashio::config 'min_grid_charge_power')
+sed -i "s|<min_grid_charge_power>|$min_grid_charge_power|g" /solarflow/config.ini
+
+max_grid_charge_power=$(bashio::config 'max_grid_charge_power')
+sed -i "s|<max_grid_charge_power>|$max_grid_charge_power|g" /solarflow/config.ini
+
+min_discharge_power=$(bashio::config 'min_discharge_power')
+sed -i "s|<min_discharge_power>|$min_grid_charge_power|g" /solarflow/config.ini
