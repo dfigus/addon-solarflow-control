@@ -5,6 +5,8 @@
 # ==============================================================================
 
 declare dtu_type
+declare use_cloud
+declare grid_charge
 declare smartmeter_type
 
 declare product_id
@@ -12,12 +14,21 @@ declare device_id
 declare full_charge_interval
 declare control_bypass
 declare control_soc
-
+declare battery_low
+declare battery_high
+declare cloud_web_user
+declare cloud_web_pwd
+declare web_token_url
+declare web_device_list_url
+declare cloud_mqtt_port
+declare cloud_mqtt_host
+declare cloud_mqtt_user
+declare cloud_mqtt_pwd
+declare roofsolar_base_topic
 declare mqtt_host
 declare mqtt_port
 declare mqtt_user
 declare mqtt_password
-
 declare dtu_base_topic
 declare sf_inverter_channels
 declare inverter_max_power
@@ -52,8 +63,15 @@ declare battery_high
 
 bashio::log.info 'Updating Solarflow Control configuration...'
 
+# Read values from the add-on configuration and update config.ini
 dtu_type=$(bashio::config 'dtu_type')
 sed -i "s|<dtu_type>|$dtu_type|g" /solarflow/config.ini
+
+use_cloud=$(bashio::config 'use_cloud')
+sed -i "s|<use_cloud>|$use_cloud|g" /solarflow/config.ini
+
+grid_charge=$(bashio::config 'grid_charge')
+sed -i "s|<grid_charge>|$grid_charge|g" /solarflow/config.ini
 
 smartmeter_type=$(bashio::config 'smartmeter_type')
 sed -i "s|<smartmeter_type>|$smartmeter_type|g" /solarflow/config.ini
@@ -73,6 +91,39 @@ sed -i "s|<control_bypass>|$control_bypass|g" /solarflow/config.ini
 control_soc=$(bashio::config 'control_soc')
 sed -i "s|<control_soc>|$control_soc|g" /solarflow/config.ini
 
+battery_low=$(bashio::config 'battery_low')
+sed -i "s|<battery_low>|$battery_low|g" /solarflow/config.ini
+
+battery_high=$(bashio::config 'battery_high')
+sed -i "s|<battery_high>|$battery_high|g" /solarflow/config.ini
+
+cloud_web_user=$(bashio::config 'cloud_web_user')
+sed -i "s|<cloud_web_user>|$cloud_web_user|g" /solarflow/config.ini
+
+cloud_web_pwd=$(bashio::config 'cloud_web_pwd')
+sed -i "s|<cloud_web_pwd>|$cloud_web_pwd|g" /solarflow/config.ini
+
+web_token_url=$(bashio::config 'web_token_url')
+sed -i "s|<web_token_url>|$web_token_url|g" /solarflow/config.ini
+
+web_device_list_url=$(bashio::config 'web_device_list_url')
+sed -i "s|<web_device_list_url>|$web_device_list_url|g" /solarflow/config.ini
+
+cloud_mqtt_port=$(bashio::config 'cloud_mqtt_port')
+sed -i "s|<cloud_mqtt_port>|$cloud_mqtt_port|g" /solarflow/config.ini
+
+cloud_mqtt_host=$(bashio::config 'cloud_mqtt_host')
+sed -i "s|<cloud_mqtt_host>|$cloud_mqtt_host|g" /solarflow/config.ini
+
+cloud_mqtt_user=$(bashio::config 'cloud_mqtt_user')
+sed -i "s|<cloud_mqtt_user>|$cloud_mqtt_user|g" /solarflow/config.ini
+
+cloud_mqtt_pwd=$(bashio::config 'cloud_mqtt_pwd')
+sed -i "s|<cloud_mqtt_pwd>|$cloud_mqtt_pwd|g" /solarflow/config.ini
+
+roofsolar_base_topic=$(bashio::config 'roofsolar_base_topic')
+sed -i "s|<roofsolar_base_topic>|$roofsolar_base_topic|g" /solarflow/config.ini
+
 mqtt_host=$(bashio::config 'mqtt_host')
 sed -i "s|<mqtt_host>|$mqtt_host|g" /solarflow/config.ini
 
@@ -81,6 +132,7 @@ sed -i "s|<mqtt_port>|$mqtt_port|g" /solarflow/config.ini
 
 mqtt_user=$(bashio::config 'mqtt_user')
 sed -i "s|<mqtt_user>|$mqtt_user|g" /solarflow/config.ini
+
 mqtt_password=$(bashio::config 'mqtt_password')
 sed -i "s|<mqtt_password>|$mqtt_password|g" /solarflow/config.ini
 

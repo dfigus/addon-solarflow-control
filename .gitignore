@@ -1,3 +1,5 @@
 # .gitignore
 config-ha.yaml
 settings.json
+config.ini
+config-test.ini
