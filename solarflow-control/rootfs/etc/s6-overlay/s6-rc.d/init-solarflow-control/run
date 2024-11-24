@@ -104,7 +104,7 @@ sed -i "s|<battery_high>|$battery_high|g" /solarflow/config.ini
 cloud_web_user=$(bashio::config 'cloud_web_user')
 sed -i "s|<cloud_web_user>|$cloud_web_user|g" /solarflow/config.ini
 
-cloud_web_pwd=$(bashio::config 'cloud_web_password')
+cloud_web_password=$(bashio::config 'cloud_web_password')
 sed -i "s|<cloud_web_password>|$cloud_web_password|g" /solarflow/config.ini
 
 web_token_url=$(bashio::config 'web_token_url')
@@ -122,7 +122,7 @@ sed -i "s|<cloud_mqtt_host>|$cloud_mqtt_host|g" /solarflow/config.ini
 cloud_mqtt_user=$(bashio::config 'cloud_mqtt_user')
 sed -i "s|<cloud_mqtt_user>|$cloud_mqtt_user|g" /solarflow/config.ini
 
-cloud_mqtt_pwd=$(bashio::config 'cloud_mqtt_password')
+cloud_mqtt_password=$(bashio::config 'cloud_mqtt_password')
 sed -i "s|<cloud_mqtt_password>|$cloud_mqtt_password|g" /solarflow/config.ini
 
 roofsolar_base_topic=$(bashio::config 'roofsolar_base_topic')
