@@ -178,7 +178,7 @@ configuration:
     name: Web Device List URL
     description: >-
       The URL to get the list of devices to activate the Zendure MQTT userid.
-  cloud_mqtt_port:  
+  cloud_mqtt_port:
     name: Cloud MQTT Port
     description: >-
       The port of the cloud MQTT broker.
@@ -186,7 +186,7 @@ configuration:
     name: Cloud MQTT Host
     description: >-
       The hostname or IP address of the cloud MQTT broker.
-  cloud_mqtt_user:  
+  cloud_mqtt_user:
     name: Cloud MQTT User
     description: >-
       The username for the cloud MQTT broker.
@@ -210,4 +210,3 @@ configuration:
     name: Minimum Discharge Power
     description: >-
       The minimum power that is required to start discharging the battery.
-  
