@@ -18,6 +18,6 @@ jobs:
     with:
       repository: "hassio-addons"
       repository_edge: "hassio-addons-edge"
-      repository_beta: "hassio-addons-beta"
+      #repository_beta: "hassio-addons-beta"
     secrets:
       DISPATCH_TOKEN: ${{ secrets.DISPATCH_TOKEN }}
