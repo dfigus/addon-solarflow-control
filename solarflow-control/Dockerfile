@@ -55,8 +55,8 @@ LABEL \
     maintainer="Joerg Maier " \
     org.opencontainers.image.title="${BUILD_NAME}" \
     org.opencontainers.image.description="${BUILD_DESCRIPTION}" \
-    org.opencontainers.image.vendor="dfigus" \
-    org.opencontainers.image.authors="Daniel Figus <10271668+dfigus@users.noreply.github.com>" \
+    org.opencontainers.image.vendor="atrox06" \
+    org.opencontainers.image.authors="Joerg Maier <41265009+atrox06@users.noreply.github.com>" \
     org.opencontainers.image.licenses="MIT" \
     org.opencontainers.image.url="https://github.com/atrox06/addon-solarflow-control" \
     org.opencontainers.image.source="https://github.com/${BUILD_REPOSITORY}" \
