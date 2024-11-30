@@ -12,6 +12,7 @@ RUN \
     apk add --no-cache git
 
 RUN \
+    ARG CACHEBUST=1 \
     git clone https://github.com/atrox06/solarflow-control.git /tmp/solarflow && \
     cd /tmp/solarflow || exit
 #&& git checkout "${SOLARFLOW_RELEASE}"
