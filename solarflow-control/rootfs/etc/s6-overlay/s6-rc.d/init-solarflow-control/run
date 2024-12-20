@@ -42,6 +42,7 @@ declare max_discharge_power
 declare limit_inverter
 declare max_inverter_limit
 declare min_inverter_limit
+declare max_inverter_input
 declare discharge_during_daytime
 declare latitude
 declare longitude
@@ -140,6 +141,9 @@ sed -i "s|<max_inverter_limit>|$max_inverter_limit|g" /solarflow/config.ini
 
 min_inverter_limit=$(bashio::config 'min_inverter_limit')
 sed -i "s|<min_inverter_limit>|$min_inverter_limit|g" /solarflow/config.ini
+
+max_inverter_input=$(bashio::config 'max_inverter_input')
+sed -i "s|<max_inverter_input>|$max_inverter_input|g" /solarflow/config.ini
 
 discharge_during_daytime=$(bashio::config 'discharge_during_daytime')
 sed -i "s|<discharge_during_daytime>|$discharge_during_daytime|g" /solarflow/config.ini

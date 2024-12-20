@@ -41,6 +41,7 @@ options:
   max_discharge_power: 150
   limit_inverter: true
   max_inverter_limit: 800
+  max_inverter_input: 700
   min_inverter_limit: 10
   discharge_during_daytime: false
   sunrise_offset: 60
@@ -77,6 +78,7 @@ schema:
   max_discharge_power: int?
   limit_inverter: bool?
   max_inverter_limit: int?
+  max_inverter_input: int?
   min_inverter_limit: int?
   discharge_during_daytime: bool?
   latitude: float?
