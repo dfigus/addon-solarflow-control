@@ -80,7 +80,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 [contributors]: https://github.com/dfigus/addon-solarflow-control/graphs/contributors
-[docs]: https://github.com/dfigus/addon-solarflow-control/blob/main/tvheadend/DOCS.md
+[docs]: https://github.com/dfigus/addon-solarflow-control/blob/main/solarflow-control/DOCS.md
 [forum-shield]: https://img.shields.io/badge/community-forum-brightgreen.svg
 [forum]: https://community.home-assistant.io/
 [reinhard-brandstaedter]: https://github.com/reinhard-brandstaedter
