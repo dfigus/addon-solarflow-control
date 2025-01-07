@@ -58,7 +58,7 @@ This has been possible thanks to the community add-ons initiative by [Frenck][fr
 
 MIT License
 
-Copyright (c) 2024 Daniel Figus
+Copyright (c) 2024-2025 Daniel Figus
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
