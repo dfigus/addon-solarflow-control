@@ -4,6 +4,8 @@ name: CI
 # yamllint disable-line rule:truthy
 on:
   push:
+    tags-ignore:
+      - "v*"
   pull_request:
     types:
       - opened
