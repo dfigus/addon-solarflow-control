@@ -30,6 +30,7 @@ options:
   inverter_max_power: 2000
   opendtu_inverter_serial: ""
   ahoydtu_inverter_id: "0"
+  ahoydtu_inverter_name: ""
   sm_generic_base_topic: ""
   sm_generic_cur_accessor: ""
   sm_generic_total_accessor: ""
@@ -65,6 +66,7 @@ schema:
   inverter_max_power: int?
   opendtu_inverter_serial: str?
   ahoydtu_inverter_id: int?
+  ahoydtu_inverter_name: str?
   sm_rapid_change_diff: int?
   sm_zero_offset: int?
   sm_scaling_factor: int?
