@@ -68,6 +68,10 @@ configuration:
     name: AhoyDTU Inverter ID
     description: >-
       The ID of the inverter connected to the AhoyDTU.
+  ahoydtu_inverter_name:
+    name: AhoyDTU Inverter Name
+    description: >-
+      The name of the inverter in AhoyDTU.
   sm_rapid_change_diff:
     name: Smartmeter Rapid Change Difference
     description: >-
@@ -79,6 +83,11 @@ configuration:
     description: >-
       The zero offset defines the minimum power that is considered as a load. This is used to prevent the inverter
       from switching on/off when the smartmeter is reading a small amount of power (e.g. standby power)
+  sm_scaling_factor:
+    name: Smartmeter Scaling Factor
+    description: >-
+      The scaling factor is used to convert the smartmeter readings to the correct power values. This is used when
+      the smartmeter reports in a different unit than W.
   sm_generic_base_topic:
     name: Generic Smartmeter Base Topic
     description: >-

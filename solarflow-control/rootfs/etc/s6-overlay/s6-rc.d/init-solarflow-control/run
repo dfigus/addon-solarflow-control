@@ -25,6 +25,7 @@ declare inverter_max_power
 
 declare opendtu_inverter_serial
 declare ahoydtu_inverter_id
+declare ahoydtu_inverter_name
 
 declare sm_rapid_change_diff
 declare sm_zero_offset
@@ -101,6 +102,9 @@ sed -i "s|<opendtu_inverter_serial>|$opendtu_inverter_serial|g" /solarflow/confi
 
 ahoydtu_inverter_id=$(bashio::config 'ahoydtu_inverter_id')
 sed -i "s|<ahoydtu_inverter_id>|$ahoydtu_inverter_id|g" /solarflow/config.ini
+
+ahoydtu_inverter_name=$(bashio::config 'ahoydtu_inverter_name')
+sed -i "s|<ahoydtu_inverter_name>|$ahoydtu_inverter_name|g" /solarflow/config.ini
 
 sm_rapid_change_diff=$(bashio::config 'sm_rapid_change_diff')
 sed -i "s|<sm_rapid_change_diff>|$sm_rapid_change_diff|g" /solarflow/config.ini
