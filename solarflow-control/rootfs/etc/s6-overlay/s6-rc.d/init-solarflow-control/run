@@ -86,7 +86,7 @@ mqtt_user=$(bashio::config 'mqtt_user')
 sed -i "s|<mqtt_user>|$mqtt_user|g" /solarflow/config.ini
 mqtt_password=$(bashio::config 'mqtt_password')
 mqtt_escaped_password=$(printf '%s\n' "$mqtt_password" | sed 's/[]\/$*.^[]/\\&/g')
-sed -i "s|<mqtt_password>|$mqtt_escaped_password|g" /solarflow/config.ini
+sed -i "s/<mqtt_password>/$mqtt_escaped_password/g" /solarflow/config.ini
 
 dtu_base_topic=$(bashio::config 'dtu_base_topic')
 sed -i "s|<dtu_base_topic>|$dtu_base_topic|g" /solarflow/config.ini
