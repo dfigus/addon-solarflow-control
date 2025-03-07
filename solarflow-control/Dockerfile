@@ -13,7 +13,7 @@ RUN \
     apk add --no-cache git
 
 RUN \
-    git clone https://github.com/reinhard-brandstaedter/solarflow-control /tmp/solarflow && \
+    git clone https://github.com/dfigus/solarflow-control /tmp/solarflow && \
     cd /tmp/solarflow && \
     git checkout "${SOLARFLOW_RELEASE}"
 
