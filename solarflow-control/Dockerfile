@@ -34,6 +34,7 @@ RUN \
 FROM ${BUILD_FROM}
 
 COPY --from=builder /tmp/solarflow/src/solarflow /solarflow
+COPY --from=builder /tmp/solarflow_fork/src/solarflow /solarflow_fork
 COPY --from=builder /tmp/solarflow/src/requirements.txt /tmp/requirements.txt
 COPY --from=builder /tmp/solarflow-bt/src/ /solarflow-bt
 
