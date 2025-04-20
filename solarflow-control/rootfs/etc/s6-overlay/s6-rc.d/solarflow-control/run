@@ -5,5 +5,12 @@
 # ==============================================================================
 
 bashio::log.info "Running Solarflow Control"
-cd /solarflow
-exec python3 /solarflow/solarflow-control.py
+
+# if the fork was not selected, then run the original solarflow-control
+if bashio::config.false 'use_fork'; then
+    cd /solarflow
+    exec python3 /solarflow/solarflow-control.py
+else
+    cd /solarflow_fork
+    exec python3 /solarflow_fork/solarflow-control.py
+fi
