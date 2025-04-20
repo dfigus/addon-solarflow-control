@@ -4,13 +4,13 @@
 # Start Solarflow Control
 # ==============================================================================
 
-bashio::log.info "Running Solarflow Control"
-
 # if the fork was not selected, then run the original solarflow-control
 if bashio::config.false 'use_fork'; then
+    bashio::log.info "Running Solarflow Control"
     cd /solarflow
     exec python3 /solarflow/solarflow-control.py
 else
+    bashio::log.info "Running Solarflow Control Fork"
     cd /solarflow_fork
     exec python3 /solarflow_fork/solarflow-control.py
 fi
