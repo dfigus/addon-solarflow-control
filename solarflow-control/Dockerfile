@@ -4,6 +4,7 @@ FROM alpine:3.21 AS builder
 ############## builder ##############
 
 ARG SOLARFLOW_RELEASE="0.77"
+ARG SOLARFLOW_FORK_RELEASE="0.78"
 ARG SOLARFLOW_BT_DIGEST="7c25dfb0ce819d153af0c8b5d0d09d9747008fc0"
 
 
@@ -16,6 +17,11 @@ RUN \
     git clone https://github.com/reinhard-brandstaedter/solarflow-control /tmp/solarflow && \
     cd /tmp/solarflow && \
     git checkout "${SOLARFLOW_RELEASE}"
+
+    RUN \
+    git clone https://github.com/dfigus/solarflow-control /tmp/solarflow_fork && \
+    cd /tmp/solarflow_fork && \
+    git checkout "${SOLARFLOW_FORK_RELEASE}"
 
 RUN \
     git clone https://github.com/reinhard-brandstaedter/solarflow-bt-manager /tmp/solarflow-bt && \

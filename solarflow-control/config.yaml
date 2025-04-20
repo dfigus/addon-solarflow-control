@@ -87,3 +87,4 @@ schema:
   longitude: float?
   sunrise_offset: int?
   sunset_offset: int?
+  use_fork: bool?
