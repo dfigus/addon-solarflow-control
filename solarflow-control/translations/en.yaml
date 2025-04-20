@@ -163,3 +163,7 @@ configuration:
     name: Battery High
     description: >-
       The battery level when the Solarflow Hub will consider the battery fully charged and stop further charging.
+  use_fork:
+    name: Use dfigus fork instead of the original /reinhard-brandstaedter/solarflow-control
+    description: >-
+      Use my forked version of solarflow-control instad of the original one from  reinhard-brandstaedter/solarflow-control.
