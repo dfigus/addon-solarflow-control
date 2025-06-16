@@ -12,6 +12,7 @@ declare device_id
 declare full_charge_interval
 declare control_bypass
 declare control_soc
+declare disable_full_discharge
 
 declare mqtt_host
 declare mqtt_port
@@ -75,6 +76,9 @@ sed -i "s|<control_bypass>|$control_bypass|g" /solarflow/config.ini
 
 control_soc=$(bashio::config 'control_soc')
 sed -i "s|<control_soc>|$control_soc|g" /solarflow/config.ini
+
+disable_full_discharge=$(bashio::config 'disable_full_discharge')
+sed -i "s|<disable_full_discharge>|$disable_full_discharge|g" /solarflow/config.ini
 
 mqtt_host=$(bashio::config 'mqtt_host')
 sed -i "s|<mqtt_host>|$mqtt_host|g" /solarflow/config.ini
