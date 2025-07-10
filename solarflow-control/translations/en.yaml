@@ -31,6 +31,10 @@ configuration:
     description: >-
       Allow solarflow-control to change the SolarFlow Hub's minimum and maxiumum battery levels which are considered
       empty (stop discharging) or full (stop charging)
+  disable_full_discharge:
+    name: Disable Full Discharge
+    description: >-
+      Disable the full discharge of the battery. This will disable the periodic full discharge of the battery.
   mqtt_host:
     name: MQTT Host
     description: >-
@@ -166,4 +170,5 @@ configuration:
   use_fork:
     name: Use dfigus fork instead of the original /reinhard-brandstaedter/solarflow-control
     description: >-
-      Use my forked version of solarflow-control instad of the original one from  reinhard-brandstaedter/solarflow-control.
+      Use my forked version of solarflow-control instad of the original one from
+      reinhard-brandstaedter/solarflow-control.
