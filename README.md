@@ -59,7 +59,7 @@ check [the contributor's page][contributors].
 
 MIT License
 
-Copyright (c) 2024-2025 Daniel Figus
+Copyright (c) 2024-2026 Daniel Figus
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -93,7 +93,7 @@ SOFTWARE.
 [issues-sfc]: https://github.com/reinhard-brandstaedter/solarflow-control/issues
 [discussions-sfc]: https://github.com/reinhard-brandstaedter/solarflow-control/discussions
 [license-shield]: https://img.shields.io/github/license/dfigus/addon-solarflow-control.svg
-[maintenance-shield]: https://img.shields.io/maintenance/yes/2025.svg
+[maintenance-shield]: https://img.shields.io/maintenance/yes/2026.svg
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-production%20ready-brightgreen.svg
 [releases-shield]: https://img.shields.io/github/release/dfigus/addon-solarflow-control.svg
 [releases]: https://github.com/dfigus/addon-solarflow-control/releases
