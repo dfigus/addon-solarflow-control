@@ -45,8 +45,10 @@ declare max_discharge_power
 declare limit_inverter
 declare max_inverter_limit
 declare min_inverter_limit
+declare steering_interval
 declare max_inverter_input
 declare discharge_during_daytime
+declare battery_discharge_start
 declare latitude
 declare longitude
 declare sunrise_offset
@@ -155,8 +157,14 @@ sed -i "s|<min_inverter_limit>|$min_inverter_limit|g" /solarflow/config.ini
 max_inverter_input=$(bashio::config 'max_inverter_input')
 sed -i "s|<max_inverter_input>|$max_inverter_input|g" /solarflow/config.ini
 
+steering_interval=$(bashio::config 'steering_interval')
+sed -i "s|<steering_interval>|$steering_interval|g" /solarflow/config.ini
+
 discharge_during_daytime=$(bashio::config 'discharge_during_daytime')
 sed -i "s|<discharge_during_daytime>|$discharge_during_daytime|g" /solarflow/config.ini
+
+battery_discharge_start=$(bashio::config 'battery_discharge_start')
+sed -i "s|<battery_discharge_start>|$battery_discharge_start|g" /solarflow/config.ini
 
 if bashio::config.has_value 'latitude'; then
     latitude=$(bashio::config 'latitude' ' ')
