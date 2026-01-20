@@ -135,14 +135,27 @@ configuration:
     name: Maximum Inverter Limit
     description: >-
       The maximum power that is sent to the inverter.
+  max_inverter_input:
+    name: Maximum Inverter Input
+    description: >-
+      The maximum power the hub would feed to the inverter channel.
   min_inverter_limit:
     name: Minimum Inverter Limit
     description: >-
       The minimum power that is sent to the inverter.
+  steering_interval:
+    name: Steering Interval
+    description: >-
+      The interval in seconds at which the Solarflow Control will only adjust power limits once to avoid flooding the inverter. In case a rapid rise
+      or drop in power is detected on the smartmeter, the adjustment will be done immediately.
   discharge_during_daytime:
     name: Discharge During Daytime
     description: >-
       Allow discharging the battery during daytime.
+  battery_discharge_start:
+    name: Battery Discharge Start SoC
+    description: >-
+      The battery level (in %) to start discharging the battery during the sunrise period.
   latitude:
     name: Latitude
     description: >-
