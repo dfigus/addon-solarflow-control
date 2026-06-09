@@ -1,6 +1,6 @@
 ARG BUILD_FROM
 
-FROM alpine:3.23 AS builder
+FROM alpine:3.24 AS builder
 ############## builder ##############
 
 ARG SOLARFLOW_RELEASE="0.77"
