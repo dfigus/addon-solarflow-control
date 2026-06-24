@@ -180,6 +180,12 @@ configuration:
     name: Battery High
     description: >-
       The battery level when the Solarflow Hub will consider the battery fully charged and stop further charging.
+  min_force_interval:
+    name: Minimum Force Interval
+    description: >-
+      The minimum seconds between consecutive force updates when rapid power changes are detected. Higher values
+      = more stable but less responsive; Lower values = faster response but risk of oscillation. Recommended range: 4-8
+      seconds; typical: 6 seconds. Must be greater than inverter response time (~2-3s) to allow stabilization.
   use_fork:
     name: Use dfigus fork instead of the original /reinhard-brandstaedter/solarflow-control
     description: >-
