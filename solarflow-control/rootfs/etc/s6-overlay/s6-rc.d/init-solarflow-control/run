@@ -55,6 +55,7 @@ declare sunrise_offset
 declare sunset_offset
 declare battery_low
 declare battery_high
+declare min_force_interval
 
 bashio::log.info 'Updating Solarflow Control configuration...'
 
@@ -191,5 +192,8 @@ sed -i "s|<battery_low>|$battery_low|g" /solarflow/config.ini
 
 battery_high=$(bashio::config 'battery_high')
 sed -i "s|<battery_high>|$battery_high|g" /solarflow/config.ini
+
+min_force_interval=$(bashio::config 'min_force_interval')
+sed -i "s|<min_force_interval>|$min_force_interval|g" /solarflow/config.ini
 
 cp /solarflow/config.ini /solarflow_fork/config.ini
