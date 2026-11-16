@@ -3,7 +3,9 @@
   "rebaseWhen": "behind-base-branch",
   "reviewers": ["dfigus"],
   "assignees": ["dfigus"],
-  "dependencyDashboard": true,
+  "dependencyDashboard": {
+    "enabled": true
+  },
   "labels": ["dependencies", "no-stale"],
   "configMigration": true,
   "commitMessagePrefix": "⬆️",
